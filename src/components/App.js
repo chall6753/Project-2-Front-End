@@ -9,8 +9,14 @@ import EmailSignUp from "./EmailSignUp";
 function App() {
 const [pepperList, setPepperList]=useState([])
 
+let URL = 'http://localhost:3000'
+
+if(Node.env == 'production'){
+  URL = 'website url'
+}
+console.log(URL)
   useEffect(()=>{
-    fetch('http://localhost:3000/peppers')
+    fetch(`${URL}/peppers`)
     .then((response)=>response.json())
     .then((data)=>setPepperList(data))
     
