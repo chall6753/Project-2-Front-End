@@ -12,8 +12,9 @@ const [pepperList, setPepperList]=useState([])
 let URL = 'http://localhost:3000'
 
 if(Node.env == 'production'){
-  URL = 'website url'
+  URL = process.env.REACT_APP_API_URL
 }
+
 console.log(URL)
   useEffect(()=>{
     fetch(`${URL}/peppers`)
