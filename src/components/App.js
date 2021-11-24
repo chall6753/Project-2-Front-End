@@ -17,7 +17,7 @@ if(process.env.NODE_ENV == 'production'){
 
 console.log(URL)
   useEffect(()=>{
-    fetch(`${URL}/peppers`)
+    fetch(`${URL}peppers`)
     .then((response)=>response.json())
     .then((data)=>setPepperList(data))
     
