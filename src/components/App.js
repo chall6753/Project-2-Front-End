@@ -9,9 +9,13 @@ import EmailSignUp from "./EmailSignUp";
 function App() {
 const [pepperList, setPepperList]=useState([])
 
-let URL = String(process.env.REACT_APP_API_URL)
+let URL = 'http://localhost:3000/'
 
-console.log(typeof URL)
+if (process.env.NODE_ENV == 'production'){
+   URL = String(process.env.REACT_APP_API_URL)
+}
+   
+
   useEffect(()=>{
     fetch(`${URL}peppers`)
     .then((response)=>response.json())

@@ -1,14 +1,7 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
-
-
+import {Link } from "react-router-dom";
 
 function PepperList({pepperList}) {
-    
-    
-    
-   
-
   return (
     <div className= "body">
         <h1>
@@ -16,7 +9,6 @@ function PepperList({pepperList}) {
         </h1>
         <div className='grid-container'>
             {pepperList.map((pepper)=>{
-              
                 return(
                   <div className='pepper'>
                     <Link key={pepper.id} to={`/peppers/${pepper.id}`}>
