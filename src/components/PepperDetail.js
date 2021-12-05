@@ -4,7 +4,6 @@ import { useParams } from "react-router";
 function PepperDetail({pepperList}) {
   let id = parseFloat(useParams().id)
   const pepper = pepperList.filter((pepper)=>{
-    console.log(pepper.id)
     return pepper.id === id}
   )
   return (

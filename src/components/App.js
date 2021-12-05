@@ -7,23 +7,18 @@ import PepperDetail from "./PepperDetail";
 import EmailSignUp from "./EmailSignUp";
 
 function App() {
-const [pepperList, setPepperList]=useState([])
+  const [pepperList, setPepperList]=useState([])
+  let URL = 'http://localhost:3000/'
 
-let URL = 'http://localhost:3000/'
-
-if (process.env.NODE_ENV == 'production'){
-   URL = String(process.env.REACT_APP_API_URL)
-}
-   
-
+  if (process.env.NODE_ENV == 'production'){
+    URL = String(process.env.REACT_APP_API_URL)
+  }
   useEffect(()=>{
     fetch(`${URL}peppers`)
     .then((response)=>response.json())
     .then((data)=>setPepperList(data))
-    
   },[])
 
-  
   return (
     <div className='main'>
       <div className='sidenav'>
