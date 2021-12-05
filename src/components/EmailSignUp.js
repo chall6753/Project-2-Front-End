@@ -17,7 +17,7 @@ function handleEmail(event){
 //     .then((data)=>console.log(data))
     
 if (process.env.NODE_ENV == 'production'){
-  url = String(process.env.REACT_APP_API_URL)
+  url = `${String(process.env.REACT_APP_API_URL)}/emaillist`
 }
 function handleSubmit(event){
     event.preventDefault()
